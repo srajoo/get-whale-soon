@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Gaegu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Yuji+Boku&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fcc7d0;
+}
+
+.card {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  width: 633px;
+  height: 224px;
+  transition: 1s;
+  transform: translate(-40%, -40%);
+
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+}
+.card:hover {
+  transform: translate(-40%, -40%) rotate(5deg);
+}
+
+.card:hover .cover {
+  transform: rotateY(-160deg);
+}
+
+.cover,
+.inside {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 50.2%;
+}
+.inside {
+  background: linear-gradient(to right, #e7e7e7, #fbfbfb 60%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  box-shadow: 1px 5px 20px #e3a8b2;
+}
+.cover {
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.cover-front,
+.cover-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.cover-front {
+  background-image: url("Get_Well_Soon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.cover-back {
+  background: linear-gradient(to left, #d9d9d9, #fbfbfb 35%);
+  transform: rotateY(180deg);
+  box-shadow: -10px -1px 10px #e3a8b2;
+}
+
+.inside h1 {
+    position: absolute;
+    font-family: "Share Tech Mono", monospace;
+    font-size: 13px;
+    color: black;
+    transform: translateY(-30px);
+    top: 60%;
+}
+
+.inside p {
+  position: absolute;
+  line-height: 13px;
+  transform: rotate(-10deg);
+  padding: 0 20px 0 20px;
+  font-family: "Gaegu", cursive;
+}
+
+.signature {
+  margin-top: 150px;
+  right: 20px;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .inside p {
+    font-size: 8px;
+  }
+}
